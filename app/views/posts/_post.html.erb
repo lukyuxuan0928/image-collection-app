@@ -1,0 +1,16 @@
+<div class="">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= link_to(image_tag(post.image.url, alt: 'Image', height: '320', width: '320'), post.image.url) if post.image? %>
+      <div class="caption">
+        <h3><%= link_to post.title, post_path(post) %></h3>
+        <p><%= truncate(post.story, length: 50) %></p>
+        <p>
+          <%= link_to 'Show', post_path(post), class: 'btn btn-info' %>
+          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-success' %>
+          <%= link_to 'Delete', post_path(post), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
